@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'master'
+      - 'root'
 
 jobs:
   docker:
@@ -29,4 +30,4 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/cloudrickshaw/docker-curator:latest
+            ghcr.io/cloudrickshaw/docker-curator:root

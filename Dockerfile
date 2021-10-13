@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.14
 
 ARG CURATOR_VERSION=5.8.4
 
@@ -12,6 +12,6 @@ RUN apk --no-cache add python py-setuptools py-pip gcc libffi py-cffi python-dev
     sed -i '/import sys/a import urllib3.contrib.pyopenssl' /usr/bin/curator && \
     sed -i '/import sys/a import urllib3' /usr/bin/curator
 
-USER nobody:nobody
+#USER nobody:nobody
 
 ENTRYPOINT ["/usr/bin/curator"]
