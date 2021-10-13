@@ -1,7 +1,9 @@
 FROM alpine:3.6
 
+ARG CURATOR_VERSION=5.8.4
+
 RUN apk --no-cache add python py-setuptools py-pip gcc libffi py-cffi python-dev libffi-dev py-openssl musl-dev linux-headers openssl-dev libssl1.0 && \
-    pip install elasticsearch-curator==5.8.1 && \
+    pip install elasticsearch-curator==$CURATOR_VERSION && \
     pip install boto3==1.9.143 && \
     pip install requests-aws4auth==0.9 && \
     pip install cryptography==2.6.1 && \
